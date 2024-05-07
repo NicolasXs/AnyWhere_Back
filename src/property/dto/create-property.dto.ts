@@ -34,9 +34,5 @@ export class CreatePropertyDto {
   @IsNotEmpty({ message: 'Photos are required' })
   photos: string;
 
-  @ApiProperty({ required: true })
-  createdAt: Date;
 
-  @ApiProperty({ required: true })
-  updateAt: Date;
 }

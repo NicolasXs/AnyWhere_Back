@@ -13,8 +13,6 @@ export interface CreatePropertyDto {
   zip_code: string;
   description: string;
   photos: string;
-  createdAt: Date;
-  updateAt: Date;
 }
 
 @Injectable()
