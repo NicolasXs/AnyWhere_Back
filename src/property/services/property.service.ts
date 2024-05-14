@@ -3,6 +3,8 @@ import { UpdatePropertyDto } from '../dto/update-property.dto';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Property, PropertyDocument } from '../schemas/property.entity';
+import { PropertyResponseDto } from '../dto/property-response.dto';
+import { PROPERTY_ERRORS } from '../constants/property-errors';
 
 export interface CreatePropertyDto {
   name: string;
@@ -22,24 +24,28 @@ export class PropertyService {
     private propertyModel: Model<PropertyDocument>,
   ) {}
 
-  async create(createPropertyDto: CreatePropertyDto): Promise<Property> {
+  public async create(createPropertyDto: CreatePropertyDto): Promise<Property> {
     const createdProperty = new this.propertyModel(createPropertyDto);
     return createdProperty.save();
   }
 
-  findAll() {
-    return `This action returns all property`;
+  public async findAll() {
+    const properties = await this.propertyModel.find();
+    return properties.map((item) => new PropertyResponseDto(item));
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} property`;
+  public async findOne(_id: string): Promise<Property> {
+    const property = await this.propertyModel.findById(_id);
+    if (!property) throw PROPERTY_ERRORS.NOT_FOUND;
+
+    return property;
   }
 
-  update(id: number, updatePropertyDto: UpdatePropertyDto) {
+  public async update(id: number, updatePropertyDto: UpdatePropertyDto) {
     return `This action updates a #${id} property`;
   }
 
-  remove(id: number) {
+  public async remove(id: number) {
     return `This action removes a #${id} property`;
   }
 }
