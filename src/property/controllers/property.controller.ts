@@ -18,7 +18,7 @@ import { PropertyResponseDto } from '../dto/property-response.dto';
 export class PropertyController {
   constructor(private readonly propertyService: PropertyService) {}
 
-  @ApiOperation({ summary: 'create a new property' })
+  @ApiOperation({ summary: 'Create a new property' })
   @ApiResponse({
     status: 200,
     description: 'The property has been successfully created.',

@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
-import { PropertyService } from './services/property.service';
-import { PropertyController } from './controllers/property.controller';
-import mongoose from 'mongoose';
 import { MongooseModule } from '@nestjs/mongoose';
+import { PropertyController } from './controllers/property.controller';
 import { Property, PropertySchema } from './schemas/property.entity';
+import { PropertyService } from './services/property.service';
 
 @Module({
   imports: [

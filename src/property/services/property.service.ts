@@ -5,17 +5,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Property, PropertyDocument } from '../schemas/property.entity';
 import { PropertyResponseDto } from '../dto/property-response.dto';
 import { PROPERTY_ERRORS } from '../constants/property-errors';
-
-export interface CreatePropertyDto {
-  name: string;
-  type: string;
-  address: string;
-  city: string;
-  state: string;
-  zip_code: string;
-  description: string;
-  photos: string;
-}
+import { CreatePropertyDto } from '../dto/create-property.dto';
 
 @Injectable()
 export class PropertyService {

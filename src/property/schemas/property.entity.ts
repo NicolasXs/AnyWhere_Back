@@ -10,25 +10,25 @@ export class Property {
   @Prop({ required: true })
   name: string;
 
-  @Prop({ required: false, unique: true, lowercase: true })
+  @Prop({ required: false, unique: false, lowercase: true })
   type: string;
 
-  @Prop({ required: false, unique: true, lowercase: true })
+  @Prop({ required: false, unique: false, lowercase: true })
   address: string;
 
-  @Prop({ required: false, unique: true, lowercase: true })
+  @Prop({ required: false, unique: false, lowercase: true })
   city: string;
 
-  @Prop({ required: false, unique: true, lowercase: true })
+  @Prop({ required: false, unique: false, lowercase: true })
   state: string;
 
-  @Prop({ required: false, unique: true, lowercase: true })
+  @Prop({ required: false, unique: false, lowercase: true })
   zip_code: string;
 
-  @Prop({ required: false, unique: true, lowercase: true })
+  @Prop({ required: false, unique: false, lowercase: true })
   description: string;
 
-  @Prop({ required: false, unique: true, lowercase: true })
+  @Prop({ required: false, unique: false, lowercase: true })
   photos: string;
 
   @Prop({ default: () => new Date() })

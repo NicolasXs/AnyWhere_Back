@@ -33,6 +33,4 @@ export class CreatePropertyDto {
   @ApiProperty({ required: false })
   @IsNotEmpty({ message: 'Photos are required' })
   photos: string;
-
-
 }
