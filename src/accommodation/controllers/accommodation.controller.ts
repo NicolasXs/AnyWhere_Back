@@ -18,6 +18,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { AccommodationResponseDto } from '../dto/accommodation-response.dto';
+import { Accommodation } from '../schemas/accommodation.entity';
 
 @ApiTags('Accommodation')
 @Controller('accommodation')
@@ -38,27 +39,39 @@ export class AccommodationController {
     return this.accommodationService.create(dto);
   }
 
+  @ApiOperation({ summary: 'Get all accommodations' })
+  @ApiResponse({
+    status: 200,
+    description: 'The property has been successfully retrieved.',
+    type: [Accommodation],
+  })
   @Get()
   findAll() {
     return this.accommodationService.findAll();
   }
 
+  @ApiOperation({ summary: 'Get one accommodation' })
+  @ApiResponse({
+    status: 200,
+    description: 'The property has been successfully retrieved.',
+    type: AccommodationResponseDto,
+  })
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.accommodationService.findOne(+id);
+    return this.accommodationService.findOne(id);
   }
 
   @Patch(':id')
-  @ApiConsumes('multipart/form-data')
+  // @ApiConsumes('multipart/form-data')
   update(
     @Param('id') id: string,
     @Body() updateAccommodationDto: UpdateAccommodationDto,
   ) {
-    return this.accommodationService.update(+id, updateAccommodationDto);
+    return this.accommodationService.update(id, updateAccommodationDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.accommodationService.remove(+id);
+    return this.accommodationService.remove(id);
   }
 }

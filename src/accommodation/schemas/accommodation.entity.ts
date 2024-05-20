@@ -10,40 +10,40 @@ export class Accommodation {
   @Prop({ required: false })
   owner_id: string;
 
-  @Prop({ required: true, unique: false, lowercase: true })
+  @Prop({ required: true, lowercase: true })
   accommodation_type: string;
 
-  @Prop({ required: true, unique: false, lowercase: true })
+  @Prop({ required: true, lowercase: true })
   space_type: string;
 
-  @Prop({ required: true, unique: false, lowercase: true })
+  @Prop({ required: true, lowercase: true })
   address: string;
 
-  @Prop({ required: false, unique: false, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   reference_address: string;
 
-  @Prop({ required: true, unique: false })
+  @Prop({ required: true })
   host_number: number;
 
-  @Prop({ required: true, unique: false })
+  @Prop({ required: true })
   number_rooms: number;
 
-  @Prop({ required: true, unique: false })
+  @Prop({ required: true })
   number_beds: number;
 
-  @Prop({ required: true, unique: false })
+  @Prop({ required: true })
   number_bathrooms: number;
 
-  @Prop({ required: false, unique: false, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   conveniences: string[];
 
-  @Prop({ required: true, unique: false })
+  @Prop({ required: true })
   photos: string;
 
-  @Prop({ required: true, unique: false })
+  @Prop({ required: true })
   title: string;
 
-  @Prop({ required: true, unique: false })
+  @Prop({ required: true })
   description: string;
 
   @Prop({ default: () => new Date() })

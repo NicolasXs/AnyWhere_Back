@@ -7,6 +7,8 @@ import {
   Accommodation,
   AccommodationDocument,
 } from '../schemas/accommodation.entity';
+import { AccommodationResponseDto } from '../dto/accommodation-response.dto';
+import { ACCOMMODATION_ERRORS } from '../constants/accommodation-erros';
 
 @Injectable()
 export class AccommodationService {
@@ -20,19 +22,26 @@ export class AccommodationService {
     return createdAccommodation.save();
   }
 
-  findAll() {
-    return `This action returns all accommodation`;
+  public async findAll() {
+    const accommodation = await this.accommodationModel.find();
+    return accommodation.map((item) => new AccommodationResponseDto(item));
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} accommodation`;
+  public async findOne(_id: string): Promise<Accommodation> {
+    const accommodation = await this.accommodationModel.findById(_id);
+    if (!accommodation) throw ACCOMMODATION_ERRORS.NOT_FOUND;
+    return accommodation; 
   }
 
-  update(id: number, updateAccommodationDto: UpdateAccommodationDto) {
-    return `This action updates a #${id} accommodation`;
+  public async update(id: string, dto: UpdateAccommodationDto) {
+   const accommodation = await this.accommodationModel.findById(id).exec();
+   if (!accommodation) throw ACCOMMODATION_ERRORS.NOT_FOUND;
+   await this.accommodationModel.updateOne({id}, dto).exec();
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} accommodation`;
+public async remove(id: string) {
+  const accommodation = await this.accommodationModel.findById(id).exec();
+  if (!accommodation) throw ACCOMMODATION_ERRORS.NOT_FOUND;
+  await this.accommodationModel.deleteOne({id}).exec();
   }
 }
