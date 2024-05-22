@@ -34,14 +34,19 @@ export class AccommodationService {
   }
 
   public async update(id: string, dto: UpdateAccommodationDto) {
-   const accommodation = await this.accommodationModel.findById(id).exec();
-   if (!accommodation) throw ACCOMMODATION_ERRORS.NOT_FOUND;
-   await this.accommodationModel.updateOne({id}, dto).exec();
+    const accommodation = await this.accommodationModel.findById(id).exec();
+    if (!accommodation) {
+      throw ACCOMMODATION_ERRORS.NOT_FOUND;
+    }
+    await this.accommodationModel.updateOne({ _id: id }, dto).exec();
+    return this.accommodationModel.findById(id).exec();
   }
-
-public async remove(id: string) {
-  const accommodation = await this.accommodationModel.findById(id).exec();
-  if (!accommodation) throw ACCOMMODATION_ERRORS.NOT_FOUND;
-  await this.accommodationModel.deleteOne({id}).exec();
+  
+  public async remove(id: string) {
+    const accommodation = await this.accommodationModel.findById(id).exec();
+    if (!accommodation) {
+      throw ACCOMMODATION_ERRORS.NOT_FOUND;
+    }
+    await this.accommodationModel.deleteOne({ _id: id }).exec();
   }
 }

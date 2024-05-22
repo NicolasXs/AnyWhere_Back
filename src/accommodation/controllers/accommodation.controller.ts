@@ -61,6 +61,12 @@ export class AccommodationController {
     return this.accommodationService.findOne(id);
   }
 
+  @ApiOperation({ summary: 'Update an Accommodation' })
+  @ApiResponse({
+    status: 200,
+    description: 'The Accommodation has been successfully updated.',
+    type: AccommodationResponseDto,
+  })
   @Patch(':id')
   // @ApiConsumes('multipart/form-data')
   update(
@@ -70,6 +76,11 @@ export class AccommodationController {
     return this.accommodationService.update(id, updateAccommodationDto);
   }
 
+  @ApiOperation({ summary: 'Delete an Accommodation' })
+  @ApiResponse({
+    status: 200,
+    description: 'The Accommodation has been successfully deleted.',
+  })
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.accommodationService.remove(id);

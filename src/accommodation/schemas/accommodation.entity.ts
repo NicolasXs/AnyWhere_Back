@@ -14,6 +14,33 @@ export class Accommodation {
   accommodation_type: string;
 
   @Prop({ required: true, lowercase: true })
+  cpf: string;
+
+  @Prop({ required: true, lowercase: true })
+  cnpj: string;
+
+  @Prop({ required: true, lowercase: true })
+  email: string;
+
+  @Prop({ required: true, lowercase: true })
+  cnae: string;
+
+  @Prop({ required: true, lowercase: true })
+  phone: string;
+
+  @Prop({ required: true, lowercase: true })
+  social_reason: string;
+
+  @Prop({ required: true, lowercase: true })
+  state_registration: string;
+
+  @Prop({ required: true, lowercase: true })
+  date_of_foundation: Date;
+
+  @Prop({ required: true, lowercase: true })
+  date_of_birth: Date;
+
+  @Prop({ required: true, lowercase: true })
   space_type: string;
 
   @Prop({ required: true, lowercase: true })

@@ -9,6 +9,42 @@ export class CreateAccommodationDto {
   @IsNotEmpty({ message: 'Accommodation type is required' })
   accommodation_type: string;
 
+  @ApiProperty({ required: true })
+  @IsNotEmpty({ message: 'Cpf is required' })
+  cpf: string;
+
+  @ApiProperty({ required: true })
+  @IsNotEmpty({ message: 'Cnpj is required' })
+  cnpj: string;
+
+  @ApiProperty({ required: true })
+  @IsNotEmpty({ message: 'Email is required' })
+  email: string;
+
+  @ApiProperty({ required: true })
+  @IsNotEmpty({ message: 'Cnae is required' })
+  cnae: string;
+
+  @ApiProperty({ required: true })
+  @IsNotEmpty({ message: 'Phone is required' })
+  phone: string;
+
+  @ApiProperty({ required: true })
+  @IsNotEmpty({ message: 'Social reason is required' })
+  social_reason: string;
+
+  @ApiProperty({required: true})
+  @IsNotEmpty({ message: 'State registration is required' })
+  state_registration: string;
+
+  @ApiProperty({ required: true })
+  @IsNotEmpty({ message: 'Date of foundation is required' })
+  date_of_foundation: Date;
+
+  @ApiProperty({ required: true })
+  @IsNotEmpty({ message: 'Date of birth is required' })
+  date_of_birth: Date;
+
   @ApiProperty({ required: true, enum: ['Quarto', 'Espaço Inteiro'] })
   @IsNotEmpty({ message: 'Space type is required' })
   space_type: string;
