@@ -10,67 +10,67 @@ export class Accommodation {
   @Prop({ required: false })
   owner_id: string;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   accommodation_type: string;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   cpf: string;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   cnpj: string;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   email: string;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   cnae: string;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   phone: string;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   social_reason: string;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   state_registration: string;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   date_of_foundation: Date;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   date_of_birth: Date;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   space_type: string;
 
-  @Prop({ required: true, lowercase: true })
+  @Prop({ required: false, lowercase: true })
   address: string;
 
   @Prop({ required: false, lowercase: true })
   reference_address: string;
 
-  @Prop({ required: true })
-  host_number: number;
+  @Prop({ required: false })
+  guest_number: number;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   number_rooms: number;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   number_beds: number;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   number_bathrooms: number;
 
   @Prop({ required: false, lowercase: true })
   conveniences: string[];
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   photos: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   title: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   description: string;
 
   @Prop({ default: () => new Date() })

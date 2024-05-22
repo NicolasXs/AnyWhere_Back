@@ -11,7 +11,7 @@ export class AccommodationResponseDto {
       space_type,
       address,
       reference_address,
-      host_number,
+      guest_number,
       number_rooms,
       number_beds,
       number_bathrooms,
@@ -30,7 +30,7 @@ export class AccommodationResponseDto {
       space_type,
       address,
       reference_address,
-      host_number,
+      guest_number,
       number_rooms,
       number_beds,
       number_bathrooms,
@@ -61,7 +61,7 @@ export class AccommodationResponseDto {
   reference_address: string;
 
   @ApiProperty({ required: true })
-  host_number: number;
+  guest_number: number;
 
   @ApiProperty({ required: true })
   number_rooms: number;
