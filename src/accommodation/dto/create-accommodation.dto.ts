@@ -1,94 +1,94 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class CreateAccommodationDto {
   @ApiProperty({
     required: false,
     enum: ['Casa', 'Apartamento', 'Pousada', 'Hotel'],
   })
-  @IsNotEmpty({ message: 'Accommodation type is required' })
+  @IsOptional()
   accommodation_type: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Cpf is required' })
+  @IsOptional()
   cpf: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Cnpj is required' })
+  @IsOptional()
   cnpj: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Email is required' })
+  @IsOptional()
   email: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Cnae is required' })
+  @IsOptional()
   cnae: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Phone is required' })
+  @IsOptional()
   phone: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Social reason is required' })
+  @IsOptional()
   social_reason: string;
 
-  @ApiProperty({required: false})
-  @IsNotEmpty({ message: 'State registration is required' })
+  @ApiProperty({ required: false })
+  @IsOptional()
   state_registration: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Date of foundation is required' })
+  @IsOptional()
   date_of_foundation: Date;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Date of birth is required' })
+  @IsOptional()
   date_of_birth: Date;
 
   @ApiProperty({ required: false, enum: ['Quarto', 'Espaço Inteiro'] })
-  @IsNotEmpty({ message: 'Space type is required' })
+  @IsOptional()
   space_type: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Address is required' })
+  @IsOptional()
   address: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Reference address is required' })
+  @IsOptional()
   reference_address: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Host number is required' })
+  @IsOptional()
   guest_number: number;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Number rooms is required' })
+  @IsOptional()
   number_rooms: number;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Number beds is required' })
+  @IsOptional()
   number_beds: number;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Number bathrooms is required' })
+  @IsOptional()
   number_bathrooms: number;
 
   @ApiProperty({
     required: false,
     isArray: false,
   })
-  @IsNotEmpty({ message: 'Conveniences is required' })
+  @IsOptional()
   conveniences: string[];
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Photos is required' })
+  @IsOptional()
   photos: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Title is required' })
+  @IsOptional()
   title: string;
 
   @ApiProperty({ required: false })
-  @IsNotEmpty({ message: 'Description is required' })
+  @IsOptional()
   description: string;
 }
