@@ -73,6 +73,9 @@ export class Accommodation {
   @Prop({ required: false })
   description: string;
 
+  @Prop({ required: false })
+  value: string;
+
   @Prop({ default: () => new Date() })
   createdAt: Date;
 

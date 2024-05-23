@@ -19,6 +19,7 @@ export class AccommodationResponseDto {
       photos,
       title,
       description,
+      value,
       createdAt,
       updateAt,
     } = accommodation;
@@ -38,6 +39,7 @@ export class AccommodationResponseDto {
       photos,
       title,
       description,
+      value,
       createdAt,
       updateAt,
     };
@@ -86,6 +88,9 @@ export class AccommodationResponseDto {
 
   @ApiProperty({ required: true })
   description: string;
+
+  @ApiProperty({ required: true })
+  value: string;
 
   @ApiProperty({ required: true })
   createdAt: Date;

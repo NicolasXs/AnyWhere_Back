@@ -91,4 +91,8 @@ export class CreateAccommodationDto {
   @ApiProperty({ required: false })
   @IsOptional()
   description: string;
+ 
+  @ApiProperty({ required: false })
+  @IsOptional()
+  value: string;
 }
