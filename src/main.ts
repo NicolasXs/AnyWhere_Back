@@ -33,7 +33,7 @@ async function bootstrap() {
       'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.0/swagger-ui-standalone-preset.js',
     ],
   });
-
+  app.enableCors();
   await app.listen(process.env.PORT);
 }
 
