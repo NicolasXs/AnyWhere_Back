@@ -20,6 +20,9 @@ export class User {
   email: string;
 
   @Prop({ required: false })
+  password: string;
+
+  @Prop({ required: false })
   phone: string;
 
   @Prop({ default: Date.now })
