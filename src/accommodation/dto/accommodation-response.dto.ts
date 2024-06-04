@@ -3,47 +3,6 @@ import { Accommodation } from '../schemas/accommodation.entity';
 import mongoose from 'mongoose';
 
 export class AccommodationResponseDto {
-  constructor(accommodation: Accommodation) {
-    const {
-      _id,
-      owner_id,
-      accommodation_type,
-      space_type,
-      address,
-      reference_address,
-      guest_number,
-      number_rooms,
-      number_beds,
-      number_bathrooms,
-      conveniences,
-      photos,
-      title,
-      description,
-      value,
-      createdAt,
-      updateAt,
-    } = accommodation;
-
-    return {
-      _id: String(_id),
-      owner_id,
-      accommodation_type,
-      space_type,
-      address,
-      reference_address,
-      guest_number,
-      number_rooms,
-      number_beds,
-      number_bathrooms,
-      conveniences,
-      photos,
-      title,
-      description,
-      value,
-      createdAt,
-      updateAt,
-    };
-  }
   @ApiProperty({ required: true })
   _id?: mongoose.ObjectId | string;
 
@@ -97,4 +56,23 @@ export class AccommodationResponseDto {
 
   @ApiProperty({ required: true })
   updateAt: Date;
+
+  constructor(accommodation: Accommodation) {
+    this._id = String(accommodation._id);
+    this.owner_id = String(accommodation.owner_id);
+    this.accommodation_type = accommodation.accommodation_type;
+    this.space_type = accommodation.space_type;
+    this.address = accommodation.address;
+    this.reference_address = accommodation.reference_address;
+    this.guest_number = accommodation.guest_number;
+    this.number_rooms = accommodation.number_rooms;
+    this.number_beds = accommodation.number_beds;
+    this.number_bathrooms = accommodation.number_bathrooms;
+    this.conveniences = accommodation.conveniences;
+    this.photos = accommodation.photos;
+    this.title = accommodation.title;
+    this.description = accommodation.description;
+    this.createdAt = accommodation.createdAt;
+    this.updateAt = accommodation.updateAt;
+  }
 }
